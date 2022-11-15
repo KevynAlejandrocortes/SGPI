@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Login";
+}
+
+<br />
+<h1 style="text-align:center;">Sistema de información posgrados</h1>
+
+<div style="position:absolute; top:10%;left:23%">
+    
+    <br />
+    
+    <form method="post">
+        <div class="row">
+            <div style="margin-left:180px;">
+                <div class="form-group" style="margin-top: 85px; margin-bottom: 45px;">
+                    <label for="usuario" style="font-size:20px"><b>Usuario</b></label>
+                    <input type="text" class="form-control" style="border-color:darkturquoise; border-width:2px; width:400px" id="usuario" aria-describedby=""  name="documento">
+                </div>
+                <br/>
+                <br />
+                <div class="form-group">
+                    <label for="contracena" style="font-size:20px"><b>Contraseña</b></label>
+                    <input type="password" class="form-control" style="border-color:darkturquoise; border-width:2px; width:400px" id="contracena" name="contracena">
+                    <a href="" >@Html.ActionLink("¿Olvido la contraseña?", "OlvidoContracena", "Login")</a>
+
+
+                </div>
+                <!--button type="submit" class="btn btn-outline-dark" asp-controller="Administrador" asp-action="MenuAdministrador" style="margin-left: 50px; margin-top: 35px; margin-bottom: 30px;">Ingresar A</!--button>
+                <button type="submit" class="btn btn-outline-dark" asp-controller="Coordinador" asp-action="MenuCoordinador" style="margin-top: 35px; margin-bottom: 30px;">Ingresar C</button>
+                <button type="submit" class="btn btn-outline-dark" asp-controller="Estudiante" asp-action="MenuEstudiante" style="margin-top: 35px; margin-bottom: 30px;">Ingresar E</button-->
+
+                 <button type="submit" class="btn-success" style="margin-top: 35px; margin-bottom: 30px;margin-left:150px">Ingresar</button>
+
+                <br />
+            </div>
+            <div style="margin-top:85px; margin-left:100px">
+               
+            </div>
+        </div>
+
+    </form>
+
+
+</div>
+

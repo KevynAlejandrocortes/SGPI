@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewData["Title"] = "OlvidoContracena";
+}
+
+<div style="position:absolute; top:9%;left:35%">
+    <h1></h1>
+    <br />
+    <form style="border-block-width: 3px; border-block-color:darkturquoise">
+        <div class="row">
+            <div style="margin-left:30px;">
+                <div class="form-group" style="margin-top: 85px; margin-bottom: 45px;">
+                    <label for="documento" style="font-size:20px"><b>Documento</b></label>
+                    <input type="text" class="form-control" style="border-color:darkturquoise; border-width:2px; width:400px" id="documento" aria-describedby">
+                </div>
+                <br />
+                <br />
+                <div class="form-group">
+                    <label for="email" style="font-size:20px"><b>Correo electronico</b></label>
+                    <input type="email" class="form-control" style="border-color:darkturquoise; border-width:2px; width:400px" id="email">
+                </div>
+                <button type="submit" class="btn-success" style="margin-left: 80px; margin-top: 35px; margin-bottom: 30px;">Enviar</button>
+                <button type="submit" class="btn-danger" asp-area="" asp-controller="Login" asp-action="Login" style="margin-left: 80px; margin-top: 35px; margin-bottom: 30px">Cancelar</button>
+            </div>
+            <div style="margin-top:85px; margin-left:100px">
+                
+            </div>
+        </div>
+    </form>
+</div>
+

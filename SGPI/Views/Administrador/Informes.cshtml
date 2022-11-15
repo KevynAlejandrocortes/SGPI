@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewData["Title"] = "Informes";
+}
+
+<br />
+<h1 style="text-align:left">Menú principal administrador</h1>
+<ul class="navbar navbar-expand-sm bg-dark navbar-dard sticky-top">
+
+<li class="nav-item">
+    <a class="nav-link" style="color:white" href="https://localhost:5001/Administrador/CrearUsuario?">Crear usuario</a>
+</li>
+
+<li class="nav-item">
+    <a class="nav-link" style="color:white" href="BuscarUsuario">Buscar Usuario</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" style="color:white" href="informes">Generar reportes</a>
+</li>
+
+</ul>
+
+<br />
+
+<div class="row">
+
+    <form class="form-inline" style="justify-content:left">
+        <input class="form-control" type="search" placeholder="Documento" aria-label="Search">
+        <button class="btn-success" type="submit">Search</button>
+    </form>
+    <form>
+        <select name="color" id="color" class="btn btn-outline-darck" style="border:solid 1px; margin-left: 200px">
+            <option value="#">Programa</option>
+            <option value="r">Administrador</option>
+            <option value="a">Coordinador</option>
+            <option value="v">Estudiante</option>
+        </select>
+    </form>
+
+    <form>
+        <button type="submit" class="btn-success" asp-controller="Administrador" asp-action="MenuAdministrador" style="margin-left: 300px;">Volver</button>
+    </form>
+
+</div>
+
+
+<div class="row" style="margin-top: 100px">
+
+
+    <table class="table table-responsive" style="margin-left: 210px; border-color:black;">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Tipo Documento</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellido</th>
+                <th scope="col">Programa</th>
+                <th scope="col">Rol</th>
+                <th scope="col">Fecha</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr>
+                <th scope="row">2</th>
+                <td>1020487321</td>
+                <td>Kevyn</td>
+                <td>Cortes</td>
+                <td>Constrcuccion</td>
+                <td>Estudiante</td>
+                <td>07/25/1998</td>
+                <td>
+                    <button type="submit" class="btn btn-outline-dark"></button>
+                </td>
+            </tr>
+            
+        </tbody>
+        
+    </table>
+</div>

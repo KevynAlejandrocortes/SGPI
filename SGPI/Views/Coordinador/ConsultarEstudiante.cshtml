@@ -1,0 +1,97 @@
+﻿@model IEnumerable<SGPI.Models.Usuario>
+@{
+    ViewData["Title"] = "ConsultarEstudiante";
+    int cont = 0;
+}
+
+<br />
+<h1 style="text-align:left">Menú principal coordinador</h1>
+<div class="row">
+</div>
+
+<ul class="navbar navbar-expand-sm bg-dark navbar-dard sticky-top">
+
+    <li class="nav-item">
+        <a class="nav-link" style="color:white" href="https://localhost:5001/Coordinador/MenuCoordinador?">Menu Coordinador</a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" style="color:white" href="ConsultarEstudiante">Buscar estudiante</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" style="color:white" href="ProgramarAsignatura">Programar asignatura</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" style="color:white" href="Homologar">Homologar asignatura</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" style="color:white" href="EntrevistaAdmicion">Generar entrevista</a>
+    </li>
+
+</ul>
+<div class="row">
+   
+</div>
+<br />
+
+
+<div class="row">
+    <form method="post" class="form-inline" style="justify-content:left">
+        <input class="form-control" type="search" placeholder="Documento" aria-label="Search" style="margin-left:65px" name="documento">
+        <input class="btn-success" type="submit" value="Buscar" style="margin-right:230px">
+        @Html.DropDownList("IdPrograma", new SelectList(ViewBag.programas, "IdPrograma", "ValPrograma"), "Programa",new { @class = "btn btn-outline-secondary dropdown-toggle" })
+    </form>
+    <form>
+        <button type="submit" class="btn-success" asp-controller="Coordinador" asp-action="MenuCoordinador" style="margin-left: 300px;">Volver</button>
+    </form>
+</div>
+<div class="row" style="margin-top: 100px">
+    <table class="table table-responsive" style="margin-left: 20px; border-color:darkturquoise;">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Documento</th>
+                <th scope="col">Programa</th>
+                <th scope="col">E-mail</th>
+                <th scope="col">Telefono</th>
+                <th scope="col">Valor pagado</th>
+                <th scope="col">Fecha pago</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Opcion</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var i in Model)
+            {
+
+                <tr>
+                    <th scope="row">@Html.DisplayFor(modelItem => i.IdUsuario)</th>
+                    <td>@Html.DisplayFor(modelItem => i.Nombre)</td>
+                    <td>@Html.DisplayFor(modelItem => i.Documento)</td>
+                    <td>@Html.ViewBag.programa[cont]</td>
+                    <td>@Html.DisplayFor(modelItem => i.Email)</td>
+                    <td>@Html.DisplayFor(modelItem => i.Telefono)</td>
+                    <td>$$$$</td>
+                    <td>STD</td>
+                    <td>STD</td>
+                    <td>
+                        <a href='@Url.Action("", "Coordinador", new { id = i.IdUsuario })'>
+                          
+                        </a>
+                    </td>
+                </tr>
+                cont++;
+
+            }
+        </tbody>
+    </table>
+</div>
+
+<br>
+
+<div>
+
+    <button type="submit" class="btn-danger" asp-area="" asp-controller="Login" asp-action="Login" style="margin-left: 500px; margin-top: 35px; margin-bottom: 30px">Cerrar sesión</button>
+</div>

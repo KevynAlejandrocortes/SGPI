@@ -1,0 +1,89 @@
+﻿@model IEnumerable<SGPI.Models.Usuario>
+@{
+    ViewData["Title"] = "BuscarUsuario";
+    int cont = 0;
+}
+
+@**@
+<br />
+<h1 style="text-align:left">Menú principal administrador</h1>
+
+<ul class="navbar navbar-expand-sm bg-dark navbar-dard sticky-top">
+
+    <li class="nav-item">
+        <a class="nav-link" style="color:white" href="https://localhost:5001/Administrador/CrearUsuario?">Crear usuario</a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" style="color:white" href="BuscarUsuario">Buscar Usuario</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" style="color:white" href="informes">Generar reportes</a>
+    </li>
+
+</ul>
+<br />
+<body>
+    
+    <br />
+    
+    <div class="row">
+        <form style="margin-left:10px">
+            <button class="btn-success" asp-controller="Administrador" asp-action="MenuAdministrador" type="submit">Regresar</button>
+        </form>
+        <br />
+        <form class="form-inline" style="margin-left:770px" method="post">
+            <input class="form-control" type="search" placeholder="Search" value=" " name="documento">
+            <input class="btn-success" type="submit" value="Buscar">
+        </form>
+    </div>
+    <br />
+    <br />
+    <div class="container">
+        <table class="table table-responsive" style="margin-left: 120px; border-color:black">
+         
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Tipo Documento</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Programa</th>
+                    <th scope="col">Rol</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Opciones</th>
+                </tr>
+            </thead>
+          
+            <tbody>
+                @foreach (var i in Model)
+                {
+
+                    <tr>
+                        <th scope="row">@Html.DisplayFor(modelItem => i.IdUsuario)</th>
+                        <td>@Html.DisplayFor(modelItem => i.Documento)</td>
+                        <td>@Html.DisplayFor(modelItem => i.Nombre)</td>
+                        <td>@Html.DisplayFor(modelItem => i.Apellido)</td>
+                        <td>@Html.ViewBag.programa[cont]</td>
+                        <td>@Html.DisplayFor(modelItem => i.IdRol)</td>
+                        <td>@Html.DisplayFor(modelItem => i.Direccion)</td>
+                        <td>
+                            <a href='@Url.Action("Edit", "Administrador", new { id = i.IdUsuario })'>
+                                <buttom class="btn-success">Modificar</buttom>
+                            </a>
+                            <a href='@Url.Action("Delete", "Administrador",new { id = i.IdUsuario })'>
+                                <buttom class="btn-danger">Borrar</buttom>
+                            </a>
+                            <a href='@Url.Action("EntrevistaAdmicion", "Coordinador",new { id = i.IdUsuario })'>
+                                <buttom class="btn-danger">Borrar</buttom>
+                            </a>
+                        </td>
+                    </tr>
+
+                    cont++;
+
+                }
+            </tbody>
+        </table>
+    </div>
+</body>

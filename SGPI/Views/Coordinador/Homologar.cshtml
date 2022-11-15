@@ -1,0 +1,144 @@
+﻿
+@{
+    ViewData["Title"] = "Homologar";
+}
+
+<br />
+<h1 style="text-align:left">Menú principal coordinador</h1>
+<div class="row">
+</div>
+
+<ul class="navbar navbar-expand-sm bg-dark navbar-dard sticky-top">
+
+    <li class="nav-item">
+        <a class="nav-link" style="color:white" href="https://localhost:5001/Coordinador/MenuCoordinador?">Menu Coordinador</a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" style="color:white" href="ConsultarEstudiante">Buscar estudiante</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" style="color:white" href="ProgramarAsignatura">Programar asignatura</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" style="color:white" href="Homologar">Homologar asignatura</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" style="color:white" href="EntrevistaAdmicion">Generar entrevista</a>
+    </li>
+
+</ul>
+
+<div class="row">
+   
+</div>
+<br />
+
+
+<div class="row">
+
+    <form class="form-inline" style="justify-content:left">
+        <input class="form-control" type="search" placeholder="Documento" aria-label="Buscar">
+        <button class="btn-success" type="submit">Search</button>
+    </form>
+    <form>
+        <select name="color" id="color" class="btn btn-outline-darck" style="border:solid 1px; margin-left: 70px">
+            <option value="#">Programa</option>
+            <option value="r">ESP.TI</option>
+            <option value="a">MG.TI</option>
+            <option value="v">MGRMA</option>
+        </select>
+    </form>
+
+    <form>
+        <select name="color" id="color" class="btn btn-outline-darck" style="border:solid 1px; margin-left: 70px">
+            <option value="#">Programa</option>
+            <option value="r">ESP.TI</option>
+            <option value="a">MG.TI</option>
+            <option value="v">MGRMA</option>
+        </select>
+    </form>
+
+    <form style="margin-left:70px">
+        <label for="start">Periodo ac</label>
+        <input type="date" id="start" name="trip-start"
+               value="2018-07-22"
+               min="2018-01-01" max="2018-12-31">
+    </form>
+
+    <form>
+        <button type="submit" class="btn-success" asp-controller="Coordinador" asp-action="MenuCoordinador" style="margin-left: 70px;">Volver</button>
+    </form>
+
+</div>
+
+<form class="row" style="margin-top:50px;margin-left:100px">
+    <div class="form-group" style="margin-left:90px">
+        <label for="start">fecha elaboracion</label>
+        <input type="date" id="start" name="trip-start"
+               value="2018-07-22"
+               min="2018-01-01" max="2018-12-31">
+    </div>
+    <div class="form-group" style="margin-left:70px">
+        <label for="nombre" style=""><b>Nombre</b></label>
+        <input type="text" class="form-control" style="border-color:black; border-width:2px; width:200px" id="nombre">
+    </div>
+    <div class="form-group" style="margin-left:70px">
+        <label for="documento" style=""><b>Documento</b></label>
+        <input type="text" class="form-control" style="border-color:black; border-width:2px; width:200px" id="documento">
+    </div>
+</form>
+
+
+
+<div class="row" style="margin-top: 50px">
+
+
+    <table class="table table-responsive" style="border-color:black;">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Codigo asignatura</th>
+                <th scope="col">Nombre asignatura</th>
+                <th scope="col">credito</th>
+                <th scope="col">Semestre</th>
+                <th scope="col">Programa</th>
+                <th scope="col">Universidad</th>
+                <th scope="col">Nombre asignatura homologada</th>
+                <th scope="col">Codigo asignatura homologada</th>
+                <th scope="col">Credito homologada</th>
+                <th scope="col">Nota definitiva</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>101</td>
+                <td>Construcción de software IV</td>
+                <td>3</td>
+                <td>5</td>
+                <td>ESp</td>
+                <td>TdeA</td>
+                <td>
+                    <select name="color" id="color" class="btn btn-outline-darck" style="border:solid 1px; margin-left: 150px">
+                        <option value="#">Programa</option>
+                        <option value="r">ESP.TI</option>
+                        <option value="a">MG.TI</option>
+                        <option value="v">MGRMA</option>
+                    </select>
+                </td>
+                <td>10001</td>
+                <td>4</td>
+                <td>5</td>
+            </tr>
+           
+           
+    </table>
+</div>
+
+  <br />
+
+<div>
+
+    <button type="submit" class="btn-danger" asp-area="" asp-controller="Login" asp-action="Login" style="margin-left: 500px; margin-top: 35px; margin-bottom: 30px">Cerrar sesión</button>
+</div>

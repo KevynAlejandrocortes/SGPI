@@ -1,0 +1,97 @@
+﻿@model IEnumerable<SGPI.Models.Programacion>
+@{
+    ViewData["Title"] = "ProgramarAsignatura";
+    int cont = 0;
+}
+
+
+<br />
+<h1 style="text-align:left">Menú principal coordinador</h1>
+
+
+<ul class="navbar navbar-expand-sm bg-dark navbar-dard sticky-top">
+
+    <li class="nav-item">
+        <a class="nav-link" style="color:white" href="https://localhost:5001/Coordinador/MenuCoordinador?">Menu Coordinador</a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" style="color:white" href="ConsultarEstudiante">Buscar estudiante</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" style="color:white" href="ProgramarAsignatura">Programar asignatura</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" style="color:white" href="Homologar">Homologar asignatura</a>
+    </li>
+     <li class="nav-item">
+        <a class="nav-link" style="color:white" href="EntrevistaAdmicion">Generar entrevista</a>
+    </li>
+
+</ul>
+
+<div class="row">
+   
+    
+</div>
+<br />
+<div class="row">
+    <form class="form-inline" style="margin-left:60px" method="post">
+        <div style="">
+            @Html.DropDownList("IdPrograma", new SelectList(ViewBag.programas, "IdPrograma", "ValPrograma"), "Programa", new { @class = "btn btn-outline-dark dropdown-toggle" })
+        </div>
+        <div style="margin-left:250px" class="row">
+            <label for="start" style="margin-right:6px"><b>Semestre</b></label>
+            <input class="btn btn-outline-dark" type="date" id="start" name="FInicio"
+                    min="2022-01-01">
+        </div>
+        <div>
+            <button type="submit" class="btn-success" style="margin-left: 30px;">Buscar</button>
+        </div>
+    </form>
+    <form>
+        <button type="submit" class="btn-success" asp-controller="Coordinador" asp-action="MenuCoordinador" style="margin-left: 300px;">Volver</button>
+    </form>
+</div>
+<form class="row" style="margin-top:50px;margin-left:300px">
+    <div>
+        <button asp-controller="Coordinador" asp-action="Anadir" type="submit" class="btn-success" style="margin-left: 150px;">Añadir</button>
+    </div>
+</form>
+<div class="row" style="margin-top: 50px">
+    <table class="table table-responsive" style="margin-left: 120px; border-color:black;">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Fecha incio</th>
+                <th scope="col">Fecha fin</th>
+                <th scope="col">Bloque</th>
+                <th scope="col">Sala</th>
+                <th scope="col">Programa</th>
+                <th scope="col">Modulo</th>
+                <th scope="col">Codigo asignatura</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var i in Model)
+            {
+                <tr>
+                    <th scope="row">@Html.DisplayFor(modelItem => i.IdProgramacion)</th>
+                    <td>@Html.ViewBag.fechaInicio[cont]</td>
+                    <td>@Html.ViewBag.fechaFin[cont]</td>
+                    <td>@Html.DisplayFor(modelItem => i.Bloque)</td>
+                    <td>@Html.DisplayFor(modelItem => i.Salon)</td>
+                    <td>@Html.ViewBag.programa[cont]</td>
+                    <td>@Html.DisplayFor(modelItem => i.Bloque)</td>
+                </tr>
+                cont++;
+            }
+        </tbody> 
+    </table>
+</div>
+
+<br />
+<div>
+
+    <button type="submit" class="btn-danger" asp-area="" asp-controller="Login" asp-action="Login" style="margin-left: 500px; margin-top: 35px; margin-bottom: 30px">Cerrar sesión</button>
+</div>

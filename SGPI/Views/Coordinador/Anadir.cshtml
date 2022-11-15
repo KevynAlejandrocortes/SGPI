@@ -1,0 +1,82 @@
+﻿@model SGPI.Models.Programacion
+@{
+    ViewData["Title"] = "Anadir";
+}
+
+<br />
+<h1 style="text-align:left">Menú principal coordinador</h1>
+<div class="row">
+</div>
+
+<ul class="navbar navbar-expand-sm bg-dark navbar-dard sticky-top">
+
+    <li class="nav-item">
+        <a class="nav-link" style="color:white" href="https://localhost:5001/Coordinador/MenuCoordinador?">Menu Coordinador</a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" style="color:white" href="ConsultarEstudiante">Buscar estudiante</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" style="color:white" href="ProgramarAsignatura">Programar asignatura</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" style="color:white" href="Homologar">Homologar asignatura</a>
+    </li>
+     <li class="nav-item">
+        <a class="nav-link" style="color:white" href="EntrevistaAdmicion">Generar entrevista</a>
+    </li>
+
+</ul>
+
+<div class="row">
+  
+</div>
+<br />
+<div class="container" style="margin-top:65px">
+    <div class="row">
+        <form method="post">
+            <div class="row" style="margin-top:80px;margin-left:35px">
+                <div style="margin-left: 100px">
+                    @Html.DropDownList("IdPrograma", new SelectList(ViewBag.programas, "IdPrograma", "ValPrograma"), "Programa",new {@class="btn btn-outline-dark" })
+                </div>
+                <div class="form-group" style="margin-left:120px">
+                    <label asp-for="FechaIncio" class="control-label" style=""><b>Fecha Inicio</b></label>
+                    <input class="btn btn-outline-dark" asp-for="FechaIncio" type="date" id="start"
+                           value=""
+                           min="2022-01-01" pattern="MM-dd-yy">
+                </div>
+                <div class="form-group" style="margin-left:115px">
+                    <label asp-for="FechaFin" class="control-label" style=""><b>Fecha Fin</b></label>
+                    <input class="btn btn-outline-dark" asp-for="FechaFin" type="date" id="start"
+                           value=""
+                           min="2022-01-01" pattern="MM-dd-yy">
+                </div>
+            </div>
+            <div class="row" style="margin-top:100px">
+                <div class="form-group" style="margin-left:65px">
+                    <label asp-for="Bloque" class="control-label" style=""><b>Bloque</b></label>
+                    <input asp-for="Bloque" type="number" class="form-control" style="border-color:black; border-width:2px; width:200px" id="email" >
+                </div>
+                <div class="form-group" style="margin-left:65px">
+                    <label asp-for="Salon" class="control-label" style=""><b>Sala</b></label>
+                    <input asp-for="Salon" type="number" class="form-control" style="border-color:black; border-width:2px; width:200px" id="direccion" >
+                </div>
+                <div class="form-group" style="margin-left:65px">
+                    <label class="control-label" style=""><b>Modulo</b></label>
+                    <input type="number" class="form-control" style="border-color:black; border-width:2px; width:200px" id="telefono" >
+                </div>
+                <div class="form-group" style="margin-left:65px">
+                    <label class="control-label" style=""><b>Codigo Asignatura</b></label>
+                    <input type="text" class="form-control" style="border-color:black; border-width:2px; width:200px" id="telefono"  name="CAsignatura">
+                </div>
+            </div>
+            <div style="margin-left:330px;margin-top:50px">
+                <button type="submit" class="btn-success" style="margin-left: 80px; margin-top: 35px; margin-bottom: 30px;">Enviar</button>
+                <button type="submit" class="btn-danger" asp-area="" asp-controller="Coordinador" asp-action="ProgramarAsignatura" style="margin-left: 80px; margin-top: 35px; margin-bottom: 30px;">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+

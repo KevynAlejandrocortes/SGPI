@@ -1,0 +1,105 @@
+﻿
+@{
+    ViewData["Title"] = "Perfil";
+}
+
+<h1 style="text-align:left">Menú principal estudiante</h1>
+<div class="row">
+</div>
+
+<ul class="navbar navbar-expand-sm bg-dark navbar-dard sticky-top">
+
+    <li class="nav-item">
+        <a class="nav-link" style="color:white" href="https://localhost:5001/Estudiante/MenuEstudiante?">Menu Estudiante</a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" style="color:white" href="PagosMatriculas">Pagos</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" style="color:white" href="Perfil">Ingresar y actualizar</a>
+    </li>
+
+</ul>
+
+<div class="row">
+   
+</div>
+<br />
+
+<div class="container" style="margin-top:65px">
+    <div class="row">
+        <form>
+            <div>
+                <select name="tipo" id="tipo" class="btn btn-outline-darck" style="border:solid 2px; margin-left: 100px">
+                    <option value="#">Tipo</option>
+                    <option value="r">Cedula</option>
+                    <option value="a">T.I</option>
+                    <option value="v">Pasaporte</option>
+                    <option value="v">C.Extrangero</option>
+                </select>
+                <select name="programa" id="programa" class="btn btn-outline-darck" style="border:solid 2px; margin-left: 100px">
+                    <option value="#">Programa</option>
+                    <option value="r">ESP.TI</option>
+                    <option value="a">MG.TI</option>
+                    <option value="v">MGRMA</option>
+                </select>
+                <select name="tiporol" id="tiporol" class="btn btn-outline-darck" style="border:solid 2px; margin-left: 100px">
+                    <option value="#">Tipo de rol</option>
+                    <option value="r">Administrador</option>
+                    <option value="a">Coordinador</option>
+                    <option value="v">Estudiante</option>
+                </select>
+                <select name="genero" id="genero" class="btn btn-outline-darck" style="border:solid 2px; margin-left: 100px">
+                    <option value="#">Genero</option>
+                    <option value="r">Masculino</option>
+                    <option value="a">Femenino</option>
+                    <option value="v">Otro</option>
+                </select>
+            </div>
+            <div class="row" style="margin-top:100px">
+                <div class="form-group" style="margin-left:120px">
+                    <label for="ndocumento" style=""><b>N.Documento</b></label>
+                    <input type="number" class="form-control" style="border-color:black; border-width:2px; width:200px" id="ndocumento">
+                </div>
+                <div class="form-group" style="margin-left:115px">
+                    <label for="nombre" style=""><b>Nombre</b></label>
+                    <input type="text" class="form-control" style="border-color:black; border-width:2px; width:200px" id="nombre" >
+                </div>
+                <div class="form-group" style="margin-left:115px">
+                    <label for="apellido" style=""><b>Apellido</b></label>
+                    <input type="text" class="form-control" style="border-color:black; border-width:2px; width:200px" id="apellido">
+                </div>
+            </div>
+            <div class="row" style="margin-top:100px">
+                <div class="form-group" style="margin-left:120px">
+                    <label for="email" style=""><b>Correo</b></label>
+                    <input type="email" class="form-control" style="border-color:black; border-width:2px; width:200px" id="email">
+                </div>
+                <div class="form-group" style="margin-left:115px">
+                    <label for="direccion" style=""><b>Direccion</b></label>
+                    <input type="text" class="form-control" style="border-color:black; border-width:2px; width:200px" id="direccion">
+                </div>
+                <div class="form-group" style="margin-left:115px">
+                    <label for="telefono" style=""><b>Telefono</b></label>
+                    <input type="number" class="form-control" style="border-color:black; border-width:2px; width:200px" id="telefono">
+                </div>
+            </div>
+            <div class="row" style="margin-top:100px">
+                <div class="form-group" style="margin-left:115px">
+                  <img src="~/img/upload-files.jpg" width="50" height="50" />
+                    
+                </div>
+                <input class="btn btn-outline-secondary" type="file" style="height:40px; margin-top:30px">
+            </div>
+            <div class="row" style="margin-left:330px; margin-top:50px">
+                <button type="submit" class="btn-success" style="margin-left: 190px; margin-top: 35px; margin-bottom: 30px;">Enviar</button>
+                <div style="margin-left:50px">
+                   
+                </div>
+                <button type="submit" class="btn-danger" asp-area="" asp-controller="Estudiante" asp-action="MenuEstudiante" style="margin-left: 35px; margin-top: 35px; margin-bottom: 30px;">Cancelar</button>
+            </div>
+        </form>
+    </div>
+</div>
+

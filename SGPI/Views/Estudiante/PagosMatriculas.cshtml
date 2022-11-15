@@ -1,0 +1,105 @@
+﻿
+@{
+    ViewData["Title"] = "PagosMatriculas";
+}
+
+<h1 style="text-align:left">Menú principal estudiante</h1>
+<div class="row">
+</div>
+
+<ul class="navbar navbar-expand-sm bg-dark navbar-dard sticky-top">
+
+    <li class="nav-item">
+        <a class="nav-link" style="color:white" href="https://localhost:5001/Estudiante/MenuEstudiante?">Menu Estudiante</a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" style="color:white" href="Perfil">Ingresar y actualizar</a>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link" style="color:white" href="PagosMatriculas">Pagos</a>
+    </li>
+    
+
+</ul>
+<br />
+
+
+<form>
+    <button type="submit" class="btn-success" asp-controller="Estudiante" asp-action="MenuEstudiante">Volver</button>
+</form>
+
+
+
+<form class="row" style="margin-top:50px;margin-left:300px">
+    <div>
+        <button type="submit" class="btn-success" style="margin-left: 150px;">Añadir</button>
+        <button type="submit" class="btn-success" style="margin-left: 100px;">Guardar</button>
+    </div>
+</form>
+
+
+
+<div class="row" style="margin-top: 50px">
+
+
+    <table class="table table-responsive" style="margin-left: 300px; border-color:black;">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Valor pagado</th>
+                <th scope="col">Fecha pago</th>
+                <th scope="col">Comprobante de pago</th>
+                <th scope="col">Ver</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td><input type="text" style="width:100px" /></td>
+                <td>
+                    <input type="date" id="start" name="trip-start"
+                           value="2018-07-22"
+                           min="2018-01-01" max="2018-12-31">
+                </td>
+                <td>
+                    <input type="file" style="width:100px" />
+                </td>
+                <td>
+                    <input type="file" class="btn btn-outline-dark"><img src="~/img/upload-files.jpg" width="40" height="40" />
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td><input type="text" style="width:100px" /></td>
+                <td>
+                    <input type="date" id="start" name="trip-start"
+                           value="2018-07-22"
+                           min="2018-01-01" max="2018-12-31">
+                </td>
+                <td>
+                    <input type="file" style="width:100px" />
+                </td>
+                <td>
+                    <input type="file" class="btn btn-outline-dark"><img src="~/img/upload-files.jpg" width="40" height="40" />
+                </td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td><input type="text" style="width:100px" /></td>
+                <td>
+                    <input type="date" id="start" name="trip-start"
+                           value="2018-07-22"
+                           min="2018-01-01" max="2018-12-31">
+                </td>
+                <td>
+                    <input type="file" style="width:100px" />
+                </td>
+                <td>
+                    <input type="file" class="btn btn-outline-dark"><img src="~/img/upload-files.jpg" width="40" height="40" />
+                </td>
+            </tr>
+    </table>
+</div>
+
